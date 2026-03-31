@@ -9,7 +9,7 @@
 
 Most modern object detection and gesture recognition systems rely on massive, slow deep learning computer vision models (such as YOLOv8 or large CNNs). While highly accurate, these are often computationally expensive to run on edge devices, require GPUs for inference, and function largely as "black boxes" where one cannot easily explain *why* top decisions were made.
 
-The problem selected for this BYOP challenge was to build a tailored, lightweight gesture translator capable of accurately recognizing specific signs. 
+The problem selected for this challenge was to build a tailored, lightweight gesture translator capable of accurately recognizing specific signs. 
 This is highly relevant to this course because it bridges the gap between raw Computer Vision (tracking hands in visual space) and Data Science (tabular data classification), demonstrating that complex visual problems can often be solved gracefully with structured geometric feature engineering rather than brute-force neural networks.
 
 ## 2. Approach and Methodology
