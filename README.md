@@ -58,10 +58,6 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-##  Usage Guide
-
-This project is truly "Bring Your Own Gestures". To make it work, you must execute the pipeline sequentially.
-
 ### Step 1: Data Collection
 Run the data collection script to record your hand doing specific gestures:
 ```bash
