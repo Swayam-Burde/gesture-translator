@@ -34,7 +34,6 @@ gesture_translator/
 │   └── train_model.py         # Sklearn training pipeline
 ├── tests/
 │   └── test_features.py       # Unit tests for our math functions
-├── PROJECT_REPORT.md      # Detailed Capstone Report
 ├── requirements.txt       # Dependencies
 └── README.md
 ```
