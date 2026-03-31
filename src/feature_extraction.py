@@ -21,7 +21,7 @@ def calculate_angle(p1, p2, p3):
 
     norm_ba = np.linalg.norm(ba)
     norm_bc = np.linalg.norm(bc)
-    
+
     if norm_ba == 0 or norm_bc == 0:
         return 0.0
 
@@ -34,16 +34,16 @@ def calculate_angle(p1, p2, p3):
 def extract_features(landmarks):
     """
     Extract geometric features (distances and angles) from 21 MediaPipe landmarks.
-    
+
     Args:
         landmarks (list or array): List of 21 (x, y, z) tuples representing hand landmarks.
-        
+
     Returns:
         list: A flat list of engineered numeric features.
     """
     if len(landmarks) != 21:
         raise ValueError("Expected exactly 21 landmarks.")
-        
+
     features = []
 
     # Reference distance (Wrist to Middle Finger MCP) for scale normalization
@@ -52,15 +52,29 @@ def extract_features(landmarks):
         ref_dist = 1e-6
 
     # 1. Distances from Thumb Tip (4) to other finger tips
-    features.append(calculate_distance(landmarks[4], landmarks[8]) / ref_dist)  # Thumb-Index
-    features.append(calculate_distance(landmarks[4], landmarks[12]) / ref_dist) # Thumb-Middle
-    features.append(calculate_distance(landmarks[4], landmarks[16]) / ref_dist) # Thumb-Ring
-    features.append(calculate_distance(landmarks[4], landmarks[20]) / ref_dist) # Thumb-Pinky
+    features.append(
+        calculate_distance(landmarks[4], landmarks[8]) / ref_dist
+    )  # Thumb-Index
+    features.append(
+        calculate_distance(landmarks[4], landmarks[12]) / ref_dist
+    )  # Thumb-Middle
+    features.append(
+        calculate_distance(landmarks[4], landmarks[16]) / ref_dist
+    )  # Thumb-Ring
+    features.append(
+        calculate_distance(landmarks[4], landmarks[20]) / ref_dist
+    )  # Thumb-Pinky
 
     # 2. Adjacent finger tip distances
-    features.append(calculate_distance(landmarks[8], landmarks[12]) / ref_dist) # Index-Middle
-    features.append(calculate_distance(landmarks[12], landmarks[16]) / ref_dist) # Middle-Ring
-    features.append(calculate_distance(landmarks[16], landmarks[20]) / ref_dist) # Ring-Pinky
+    features.append(
+        calculate_distance(landmarks[8], landmarks[12]) / ref_dist
+    )  # Index-Middle
+    features.append(
+        calculate_distance(landmarks[12], landmarks[16]) / ref_dist
+    )  # Middle-Ring
+    features.append(
+        calculate_distance(landmarks[16], landmarks[20]) / ref_dist
+    )  # Ring-Pinky
 
     # 3. Distances from Tips to Wrist (0)
     tip_indices = [4, 8, 12, 16, 20]
