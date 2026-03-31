@@ -43,7 +43,7 @@ gesture_translator/
 
 1. **Clone the repository and CD into it**:
 ```bash
-git clone <your-repo-link>
+git clone <https://github.com/Swayam-Burde/gesture-translator.git>
 cd gesture_translator
 ```
 
